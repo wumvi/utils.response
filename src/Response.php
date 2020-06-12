@@ -41,7 +41,7 @@ class Response
      * @codeCoverageIgnore
      * @param array $data
      */
-    public static function jsonResponse(array $data): void
+    public static function flush(array $data): void
     {
         header($data[0]);
         echo $data[1];
