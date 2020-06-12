@@ -41,10 +41,9 @@ class Response
      * @codeCoverageIgnore
      * @param array $data
      */
-    public static function responseAndExit(array $data): void
+    public static function jsonResponse(array $data): void
     {
         header($data[0]);
         echo $data[1];
-        exit;
     }
 }
