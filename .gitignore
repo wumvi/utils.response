@@ -1,5 +1,5 @@
 vendor/
 .idea/
 build/
-dev.php
+test.php
 .phplint-cache
