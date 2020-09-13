@@ -17,7 +17,7 @@ class Response
     public const FIELD_STATUS = 'status';
     public const FIELD_MSG = 'msg';
     public const FIELD_DATA = 'data';
-    public const FIELD_SIGN = 'sign';
+    public const FIELD_HINT = 'hint';
     public const STATUS_OK = 'ok';
     public const STATUS_ERROR = 'error';
     public const CONTENT_TYPE_JSON = 'Content-Type: application/json';
@@ -44,7 +44,10 @@ class Response
     {
         return [
             self::CONTENT_TYPE_BINARY,
-            igbinary_serialize([self::FIELD_STATUS => self::STATUS_OK, self::FIELD_DATA => $data,]),
+            igbinary_serialize([
+                self::FIELD_STATUS => self::STATUS_OK,
+                self::FIELD_DATA => $data,
+            ]),
         ];
     }
 
@@ -52,7 +55,10 @@ class Response
     {
         return [
             self::CONTENT_TYPE_BINARY,
-            igbinary_serialize([self::FIELD_STATUS => self::STATUS_ERROR, self::FIELD_MSG => $msg,]),
+            igbinary_serialize([
+                self::FIELD_STATUS => self::STATUS_ERROR,
+                self::FIELD_MSG => $msg,
+            ]),
         ];
     }
 
@@ -64,15 +70,22 @@ class Response
     {
         return [
             self::CONTENT_TYPE_JSON,
-            json_encode([self::FIELD_STATUS => self::STATUS_OK, self::FIELD_DATA => $data,]),
+            json_encode([
+                self::FIELD_STATUS => self::STATUS_OK,
+                self::FIELD_DATA => $data,
+            ]),
         ];
     }
 
-    public static function jsonError(string $msg): array
+    public static function jsonError(string $msg, string $hint = ''): array
     {
         return [
             self::CONTENT_TYPE_JSON,
-            json_encode([self::FIELD_STATUS => self::STATUS_ERROR, self::FIELD_MSG => $msg,]),
+            json_encode([
+                self::FIELD_STATUS => self::STATUS_ERROR,
+                self::FIELD_MSG => $msg,
+                self::FIELD_HINT => $hint
+            ]),
         ];
     }
 

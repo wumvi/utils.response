@@ -8,7 +8,7 @@
   ],
   "require": {
     "ext-json": "*",
-    "wumvi/utils.sign": "1.0.4"
+    "wumvi/utils.sign": "v1.0.5"
   },
   "require-dev": {
     "phpunit/phpunit": "9.2.2",
