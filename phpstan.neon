@@ -1,6 +1,0 @@
-parameters:
-    checkGenericClassInNonGenericObjectType: false
-    checkMissingIterableValueType: false
-    paths:
-        - src/
-        - tests/

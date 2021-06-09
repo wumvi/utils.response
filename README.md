@@ -5,3 +5,7 @@
 [![codecov](https://codecov.io/gh/wumvi/utils.response/branch/master/graph/badge.svg)](https://codecov.io/gh/wumvi/utils.response)
 [![Maintainability](https://api.codeclimate.com/v1/badges/ea11aec1e9f0eb8bcb61/maintainability)](https://codeclimate.com/github/wumvi/utils.response/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/ea11aec1e9f0eb8bcb61/test_coverage)](https://codeclimate.com/github/wumvi/utils.response/test_coverage)
+
+```bash
+-d xdebug.mode=coverage
+```

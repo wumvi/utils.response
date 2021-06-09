@@ -13,8 +13,8 @@ class ResponseTest extends TestCase
             'Json Success'
         );
 
-        $this->assertEquals(
-            ['Content-Type: application/json', '{"status":"error","msg":"test"}'],
+        self::assertEquals(
+            ['Content-Type: application/json', '{"status":"error","msg":"test","hint":""}'],
             Response::jsonError("test"),
             'Json Error'
         );
@@ -38,10 +38,10 @@ class ResponseTest extends TestCase
 
     public function testSign(): void
     {
-        $response = new Response('m5', '123');
+        $response = new Response('m5', 'pr', '123');
         $json = $response->successSign([1], false);
         $this->assertEquals(
-            ['Content-Type: application/json', 'm516d1a2b7c86f137adf1d393ee596addc{"status":"ok","data":[1]}'],
+            ['Content-Type: application/json', 'm5pr16d1a2b7c86f137adf1d393ee596addc{"status":"ok","data":[1]}'],
             $json,
             'Json Success'
         );
@@ -51,7 +51,7 @@ class ResponseTest extends TestCase
         $this->assertEquals(
             [
                 'Content-Type: application/octet-stream',
-                'bTVhZDM5ZTNjNmQyZGM2ODNmOGZlMDU2M2RkZGU3ZmUyNwAAAAIUAhEGc3RhdHVzEQJvaxEEZGF0YRQBBgAGAQ=='
+                'bTVwcmFkMzllM2M2ZDJkYzY4M2Y4ZmUwNTYzZGRkZTdmZTI3AAAAAhQCEQZzdGF0dXMRAm9rEQRkYXRhFAEGAAYB'
             ],
             $act,
             'Binary Success'

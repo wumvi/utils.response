@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace Wumvi\Utils;
 
-use Wumvi\Utils\Sign;
+use Wumvi\Sign\Encode;
 
 /**
  *
@@ -23,21 +23,27 @@ class Response
     public const CONTENT_TYPE_JSON = 'Content-Type: application/json';
     public const CONTENT_TYPE_BINARY = 'Content-Type: application/octet-stream';
 
-    private string $algo;
-    private string $salt;
-
-    public function __construct(string $algo, string $salt)
-    {
-        $this->algo = $algo;
-        $this->salt = $salt;
+    public function __construct(
+        public string $algo,
+        public string $saltName,
+        public string $saltValue
+    ) {
     }
 
-    public function successSign(array $data, bool $isBinary = false): array
+    public function successSign(array $dataRaw, bool $isBinary = false): array
     {
-        $data = $isBinary ? self::binarySuccess($data) : self::jsonSuccess($data);
-        $data[self::DATA] = Sign::getSignWithData($data[self::DATA], $this->salt, $this->algo);
+        list ($contentType, $data) = $isBinary ? self::binarySuccess($dataRaw) : self::jsonSuccess($dataRaw);
+        $data = Encode::createSignWithData(
+            $data,
+            $this->saltName,
+            $this->saltValue,
+            $this->algo
+        );
 
-        return $data;
+        return [
+            $contentType,
+            $data
+        ];
     }
 
     public static function binarySuccess(array $data): array
