@@ -9,7 +9,7 @@
   "require": {
     "ext-json": "*",
     "php": "^8.0",
-    "wumvi/utils.sign": "v1.0.11"
+    "wumvi/utils.sign": "v1.0.12"
   },
   "require-dev": {
     "phpunit/phpunit": "9.5.5",
@@ -22,7 +22,16 @@
     }
   },
   "archive": {
-    "exclude": ["phpunit", "phpunit.xml", "ruleset.xml"]
+    "exclude": [
+      "phpunit",
+      "phpunit.xml",
+      "ruleset.xml",
+      ".gitignore",
+      ".travis.yml",
+      "bootstrap.php",
+      "ruleset.xml",
+      "phpstan.neon"
+    ]
   },
   "scripts": {
     "phpstan": [

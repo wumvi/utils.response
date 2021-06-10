@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5a7e4f4b4e14d2d77feb111e10a08243",
+    "content-hash": "7c5d872e232df92846db4a97d43db7d3",
     "packages": [
         {
             "name": "wumvi/utils.sign",
-            "version": "v1.0.11",
+            "version": "v1.0.12",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wumvi/utils.sign.git",
-                "reference": "c21e5f64005595ed653622e27b9b20131992095e"
+                "reference": "a5ddd2ddab43cf61b64c03fed9507273feded15f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wumvi/utils.sign/zipball/c21e5f64005595ed653622e27b9b20131992095e",
-                "reference": "c21e5f64005595ed653622e27b9b20131992095e",
+                "url": "https://api.github.com/repos/wumvi/utils.sign/zipball/a5ddd2ddab43cf61b64c03fed9507273feded15f",
+                "reference": "a5ddd2ddab43cf61b64c03fed9507273feded15f",
                 "shasum": ""
             },
             "require": {
@@ -46,9 +46,9 @@
             ],
             "support": {
                 "issues": "https://github.com/wumvi/utils.sign/issues",
-                "source": "https://github.com/wumvi/utils.sign/tree/v1.0.11"
+                "source": "https://github.com/wumvi/utils.sign/tree/v1.0.12"
             },
-            "time": "2021-06-09T23:02:57+00:00"
+            "time": "2021-06-10T22:58:54+00:00"
         }
     ],
     "packages-dev": [
